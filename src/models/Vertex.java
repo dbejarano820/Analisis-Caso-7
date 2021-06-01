@@ -3,7 +3,8 @@ package models;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
-import utils.lexicographHashTool;
+import utils.*;
+
 
 public class Vertex {
 
@@ -41,12 +42,10 @@ public class Vertex {
         ArrayList<Edge> tmp = new ArrayList<>();
 
         for(Edge n : edges)
-            if( !n.destination.visited && ( lexicographHashTool.lexico.get(pValue) > lexicographHashTool.lexico.get(n.value)))
+            if( !n.destination.visited &&( Tools.lexicoHash.get(pValue) > Tools.lexicoHash.get(n.value)))
                 tmp.add(n);
 
         return tmp;
     }
-
-
 
 }

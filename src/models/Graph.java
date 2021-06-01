@@ -1,37 +1,34 @@
 package models;
+
 import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.HashMap;
 
 public class Graph {
 
-    public  Set<Vertex> vertices; //collection of all vertexs
+    public  HashMap<Integer, Vertex> vertices;
 
     public Graph() {
-        vertices = new HashSet<>();
+        vertices = new HashMap<>();
     }
 
-    public ArrayList<Vertex> getVertices() {
-        return new ArrayList<>(vertices);
+    public Vertex getVertex(int pId) {
+        return vertices.get(pId);
     }
 
-    public boolean addVertex(Vertex vertex){
-        return vertices.add(vertex);
+    public void addVertex(Vertex vertex) {
+        vertices.put(vertex.id, vertex);
     }
 
     public ArrayList<Vertex> getInitialVertices() {
-
         ArrayList<Vertex> tmp = new ArrayList<>();
-
-        for(Vertex n : vertices)
+        for(Vertex n : vertices.values())
             if(n.initial)
                 tmp.add(n);
-
         return tmp;
     }
 
-    public void resetVisits(){
-        for(Vertex n : vertices)
+    public void resetAllVisits() {
+        for (Vertex n : vertices.values())
             n.visited = false;
     }
 

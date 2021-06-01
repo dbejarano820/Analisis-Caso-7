@@ -1,4 +1,5 @@
 package program;
+import logic.Probabilistic;
 import models.*;
 
 import java.util.ArrayList;
@@ -10,8 +11,11 @@ public class mainCaso7 {
 
         graph3x3.generateGraphCaso7();
 
-        ArrayList<Vertex> tmp = graph3x3.getInitialVertices();
+        Probabilistic solver = new Probabilistic(graph3x3, "Files/caso 7 test_latest encryption.zip", "Files/" );
 
-        System.out.println("id is:" + tmp.size());
+        solver.execute();
+       // ArrayList<String> passwords = solver.amountPossiblePasswords(graph3x3.getVertex(1), ' ');
+       // passwords.forEach(System.out::println);
+
     }
 }

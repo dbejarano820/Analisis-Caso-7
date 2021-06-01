@@ -6,7 +6,6 @@ public class Edge {
     public char value;
 
     public Edge(Vertex pDestination, char pValue) {
-//        super();
         this.destination = pDestination;
         this.value = pValue;
     }
@@ -18,4 +17,5 @@ public class Edge {
     public char getValue() {
         return value;
     }
+
 }
