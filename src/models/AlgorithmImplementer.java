@@ -10,5 +10,5 @@ public abstract class AlgorithmImplementer {
         this.source = pSource;
         this.destination = pDestination;
     }
-    public abstract int execute();
+    public abstract void execute();
 }

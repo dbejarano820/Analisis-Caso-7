@@ -11,20 +11,14 @@ public class Vertex {
     public int id;
     public Set<Edge> edges;
     public boolean initial;
-    public boolean visited;
 
     public Vertex(int pId) {
         this.id = pId;
         this.edges = new HashSet<>();
-        this.visited = false;
     }
 
     public int getId() {
         return id;
-    }
-
-    public boolean isVisited(){
-        return visited;
     }
 
     public boolean addEdge(Edge edge){
@@ -42,9 +36,8 @@ public class Vertex {
         ArrayList<Edge> tmp = new ArrayList<>();
 
         for(Edge n : edges)
-            if( !n.destination.visited &&( Tools.lexicoHash.get(pValue) > Tools.lexicoHash.get(n.value)))
+            if(Tools.lexicoHash.get(pValue) > Tools.lexicoHash.get(n.value))
                 tmp.add(n);
-
         return tmp;
     }
 

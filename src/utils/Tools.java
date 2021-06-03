@@ -20,14 +20,4 @@ public class Tools {
 
     public static ArrayList<String> failedPasswords = new ArrayList<>();
 
-
-    public static Map<Integer, Double> sizePriorities = Map.ofEntries(
-            entry(1, 1.0), entry(2, 1.0), entry(3, 1.0),
-            entry(4, 1.0), entry(5, 1.0), entry(6, 1.0)
-    );
-
-    public static Map<Integer, Double> beginningCharPriorities = Map.ofEntries(
-            entry(1, 1.0), entry(2, 1.0), entry(3, 1.0),
-            entry(4, 1.0), entry(5, 1.0), entry(6, 1.0)
-    );
 }

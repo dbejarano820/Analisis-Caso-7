@@ -27,11 +27,6 @@ public class Graph {
         return tmp;
     }
 
-    public void resetAllVisits() {
-        for (Vertex n : vertices.values())
-            n.visited = false;
-    }
-
     public void generateGraphCaso7(){
 
         Vertex v1 = new Vertex(1);
