@@ -1,2 +1,6 @@
 # Analisis-Caso-7
-Caso 7 para el curso de Análisis de Algoritmos
+Caso 7 para el curso de Análisis de Algoritmos.
+
+El algoritmo probabilista intenta encontrar en la menor cantidad de tanteos la clave del archivo proporcionado. 
+
+El algoritmo selecciona un random sample de los posibles vertices iniciales del grafo, luego le calcula todas las posibles combinaciones recursivamente de contraseñas que cumplen con los parametras y no se han probado anteriormente. Luego categoriza las contraseñas por tamaño y tira un random con la probabilidad distribuida en los pesos de dichos tamaños disponibles del vertex. Al seleccionar el tamaño, luego se categorizan las contraseñas restantes de dicho tamaño por primer char, nuevamente se tira un random con la probabilidad distribuida en los pesos de dichos chars presentes. Se selecciona una combincacion y se prueba la contraseña. Si falla, las distribuciones se van precisando y dicha contraseña se guarda como incorrecta., es decir si prueba "FK", entonces le baja el peso por 10% al tamaño 2 y 10% al char 'F'. Por lo tanto en los siguientes tanteos, se aumenta la probabilidad de que seleccione una combinacion de tamaño 3 y que empiece con '2', si fuese a estar presente en los disponibles. Así el algoritmo puede ir aprendiendo alguna tendencia.
